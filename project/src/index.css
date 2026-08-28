@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-ink-50 text-ink-900 font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-primary-600 px-6 py-3.5 text-base font-semibold text-white shadow-soft transition-all duration-200 active:scale-[0.97] hover:bg-primary-700 disabled:opacity-50 disabled:active:scale-100;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-ink-200 bg-white px-5 py-3 text-sm font-semibold text-ink-700 transition-all duration-200 active:scale-[0.97] hover:border-ink-300 hover:bg-ink-50;
+  }
+  .card {
+    @apply rounded-3xl border border-ink-200/70 bg-white shadow-soft;
+  }
+  .input-field {
+    @apply w-full rounded-2xl border border-ink-200 bg-white px-4 py-3.5 text-base text-ink-900 outline-none transition-all duration-200 placeholder:text-ink-400 focus:border-primary-500 focus:ring-4 focus:ring-primary-100;
+  }
+}
+
+/* hide scrollbar for chat window */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
